@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
@@ -12,6 +12,7 @@
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
 
     <!-- Reports.net 本体 -->
+    <PackageReference Include="Reports.net" Version="5.0.2" Condition="!Exists('$(ProgramFiles)\Pao@Office\Reports.net\Pao.Reports.dll') And !Exists('$(ProgramFiles(x86))\Pao@Office\Reports.net\Pao.Reports.dll')" />
     <Reference Include="Pao.Reports">
       <Name>Pao.Reports</Name>
       <HintPath Condition="Exists('$(ProgramFiles)')">$(ProgramFiles)\Pao@Office\Reports.net\Pao.Reports.dll</HintPath>
@@ -28,5 +29,5 @@
     <PackageReference Include="System.Management" Version="5以上.0.0" /> -->    
     
   </ItemGroup>
-
+  
 </Project>
